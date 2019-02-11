@@ -3,15 +3,40 @@ import React from 'react';
 export class RecipeForm extends React.Component {
    constructor(props) {
       super(props);
+      this.state = { value: '' };
+
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
    }
+   handleChange(event) {
+      this.setState({
+         value: event.target.value,
+      });
+   }
+
+   handleSubmit() {}
+
    render() {
       return (
-         <form>
+         <form onSubmit={this.handleSubmit}>
             <label>
-               Recipe Name
-               <input type="name" name="name" />
-               <input type="submit" value="Submit" />
+               Name
+               <input
+                  type="text"
+                  name="name"
+                  value={this.state.value}
+                  onChange={this.handleChange}
+               />
             </label>
+            <label>
+               Image
+               <input type="text" />
+            </label>
+            <label>
+               Link
+               <input type="text" />
+            </label>
+            <input type="submit" value="Submit" />
          </form>
       );
    }

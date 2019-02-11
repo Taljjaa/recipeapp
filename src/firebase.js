@@ -8,5 +8,4 @@ const config = {
    messagingSenderId: '598773109468',
 };
 firebase.initializeApp(config);
-const databaseRef = firebase.database().ref();
-export const todosRef = databaseRef.child('recipes');
+export default firebase;
