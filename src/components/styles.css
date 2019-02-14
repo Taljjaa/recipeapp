@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches');
+
+body {
+   font-family: 'Staatliches', cursive;
+}
+
+.recipeGrid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   grid-gap: 15px;
+}
+
+.recipeImg {
+   width: 350px;
+   height: 350px;
+   object-fit: cover;
+}
