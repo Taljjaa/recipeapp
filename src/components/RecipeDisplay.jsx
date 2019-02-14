@@ -31,6 +31,12 @@ export class RecipeDisplay extends React.Component {
          });
       });
    }
+
+   removeItem(recipeId) {
+      const recipeRef = firebase.database().ref(`/recipes/${recipeId}`);
+      recipeRef.remove();
+   }
+
    render() {
       return (
          <div>
@@ -46,6 +52,9 @@ export class RecipeDisplay extends React.Component {
                         <div>
                            <a href={recipe.link}>{recipe.title}</a>
                         </div>
+                        <button onClick={() => this.removeItem(recipe.id)}>
+                           Delete
+                        </button>
                      </div>
                   );
                })}
