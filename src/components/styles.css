@@ -6,12 +6,17 @@ body {
 
 .recipeGrid {
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-   grid-gap: 15px;
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   grid-gap: 10px;
+   justify-items: center;
+   align-items: center;
 }
 
 .recipeImg {
-   width: 350px;
-   height: 350px;
+   /* width: 350px;
+   height: 350px; */
+   width: 100%;
+   max-width: 500px;
+   max-height: 500px;
    object-fit: cover;
 }
