@@ -44,14 +44,14 @@ export class RecipeDisplay extends React.Component {
                {this.state.recipes.map(recipe => {
                   return (
                      <div key={recipe.id}>
-                        <img
-                           className="recipeImg"
-                           src={recipe.image}
-                           alt={recipe.title}
-                        />
-                        <div>
-                           <a href={recipe.link}>{recipe.title}</a>
-                        </div>
+                        <a href={recipe.link}>
+                           <img
+                              className="recipeImg"
+                              src={recipe.image}
+                              alt={recipe.title}
+                           />
+                           <div>{recipe.title}</div>
+                        </a>
                         <button onClick={() => this.removeItem(recipe.id)}>
                            Delete
                         </button>
