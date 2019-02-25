@@ -10,6 +10,7 @@ body {
    grid-gap: 10px;
    justify-items: center;
    align-items: center;
+   margin: 0px 8px;
 }
 
 .recipeImg {
