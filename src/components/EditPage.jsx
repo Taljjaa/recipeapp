@@ -6,7 +6,7 @@ export class EditPage extends React.Component {
    render() {
       return (
          <div>
-            <RecipeDisplay />
+            <h1>I am the edit page!</h1>
          </div>
       );
    }
