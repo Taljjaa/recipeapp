@@ -3,16 +3,12 @@ import firebase from '../firebase.js';
 import './styles.css';
 
 export class RecipeDisplay extends React.Component {
-   constructor(props) {
-      super(props);
-
-      this.state = {
-         title: '',
-         image: '',
-         link: '',
-         recipes: [],
-      };
-   }
+   state = {
+      title: '',
+      image: '',
+      link: '',
+      recipes: [],
+   };
    componentDidMount() {
       const recipesRef = firebase.database().ref('recipes');
       recipesRef.on('value', snapshot => {
@@ -32,10 +28,10 @@ export class RecipeDisplay extends React.Component {
       });
    }
 
-   removeItem(recipeId) {
-      const recipeRef = firebase.database().ref(`/recipes/${recipeId}`);
-      recipeRef.remove();
-   }
+   // removeItem(recipeId) {
+   //    const recipeRef = firebase.database().ref(`/recipes/${recipeId}`);
+   //    recipeRef.remove();
+   // }
 
    render() {
       return (
@@ -52,9 +48,6 @@ export class RecipeDisplay extends React.Component {
                            />
                            <div>{recipe.title}</div>
                         </a>
-                        <button onClick={() => this.removeItem(recipe.id)}>
-                           Delete
-                        </button>
                      </div>
                   );
                })}
