@@ -3,31 +3,6 @@ import firebase from '../firebase.js';
 import './styles.css';
 
 export class RecipeDisplay extends React.Component {
-   state = {
-      title: '',
-      image: '',
-      link: '',
-      recipes: [],
-   };
-   componentDidMount() {
-      const recipesRef = firebase.database().ref('recipes');
-      recipesRef.on('value', snapshot => {
-         let recipes = snapshot.val();
-         let newState = [];
-         for (let recipe in recipes) {
-            newState.push({
-               id: recipe,
-               title: recipes[recipe].title,
-               image: recipes[recipe].image,
-               link: recipes[recipe].link,
-            });
-         }
-         this.setState({
-            recipes: newState,
-         });
-      });
-   }
-
    // removeItem(recipeId) {
    //    const recipeRef = firebase.database().ref(`/recipes/${recipeId}`);
    //    recipeRef.remove();
@@ -35,23 +10,15 @@ export class RecipeDisplay extends React.Component {
 
    render() {
       return (
-         <div>
-            <div className="recipeGrid">
-               {this.state.recipes.map(recipe => {
-                  return (
-                     <div key={recipe.id}>
-                        <a href={recipe.link}>
-                           <img
-                              className="recipeImg"
-                              src={recipe.image}
-                              alt={recipe.title}
-                           />
-                           <div>{recipe.title}</div>
-                        </a>
-                     </div>
-                  );
-               })}
-            </div>
+         <div key={this.props.id}>
+            <a href={this.props.link}>
+               <img
+                  className="recipeImg"
+                  src={this.props.image}
+                  alt={this.props.title}
+               />
+               <div>{this.props.title}</div>
+            </a>
          </div>
       );
    }
