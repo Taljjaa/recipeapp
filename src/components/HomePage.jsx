@@ -1,12 +1,11 @@
 import React from 'react';
-import './styles.css';
 import { RecipeStorage } from './RecipeStorage';
+import './styles.css';
 
-export class EditPage extends React.Component {
+export class HomePage extends React.Component {
    render() {
       return (
          <div className="recipeGrid">
-            <div className="newRecipe recipeImg">Add Recipe</div>
             <RecipeStorage />
          </div>
       );
