@@ -24,6 +24,6 @@ body {
 }
 
 .newRecipe {
-   border: 2px dashed black;
+   border: 2px dashed #4f4f4f;
    height: 100%;
 }
