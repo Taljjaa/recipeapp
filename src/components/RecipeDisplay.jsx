@@ -1,5 +1,4 @@
 import React from 'react';
-import firebase from '../firebase.js';
 import './styles.css';
 
 export class RecipeDisplay extends React.Component {

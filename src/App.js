@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
-import { RecipeDisplay } from './components/RecipeDisplay';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import './components/styles.css';
 import { EditButton } from './components/EditButton';
 import { EditPage } from './components/EditPage';
