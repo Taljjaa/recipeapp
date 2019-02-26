@@ -8,14 +8,9 @@ export class EditPage extends React.Component {
       return (
          <div className="recipeGrid">
             <div className="newRecipe recipeImg">
-               Add Recipe
-               <FontAwesomeIcon
-                  style={{ color: '#4f4f4f' }}
-                  size="5x"
-                  icon={['fas', 'plus']}
-               />
+               <span className="txt">Add Recipe</span>
+               <FontAwesomeIcon className="plusIcon" icon={['fas', 'plus']} />
             </div>
-
             <RecipeStorage />
          </div>
       );
