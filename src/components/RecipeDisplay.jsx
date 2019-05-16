@@ -9,15 +9,13 @@ export class RecipeDisplay extends React.Component {
 
    render() {
       return (
-         <div key={this.props.id}>
-            <a href={this.props.link}>
-               <img
-                  className="recipeImg"
-                  src={this.props.image}
-                  alt={this.props.title}
-               />
-               <div>{this.props.title}</div>
-            </a>
+         <div key={this.props.id} onClick={this.props.onClick}>
+            <img
+               className="recipeImg"
+               src={this.props.image}
+               alt={this.props.title}
+            />
+            <div>{this.props.title}</div>
          </div>
       );
    }

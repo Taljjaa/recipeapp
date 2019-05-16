@@ -18,13 +18,14 @@ export class RecipeStorage extends React.Component {
 
    render() {
       console.log(this.state.recipes);
-      const recipes = Object.values(this.state.recipes).map(function(recipe) {
+      const recipes = Object.values(this.state.recipes).map(recipe => {
          console.log(recipe);
          return (
             <RecipeDisplay
                image={recipe.image}
                link={recipe.link}
                title={recipe.title}
+               onClick={this.props.onClick}
             />
          );
       });
