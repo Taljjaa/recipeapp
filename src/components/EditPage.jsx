@@ -4,6 +4,9 @@ import { RecipeStorage } from './RecipeStorage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export class EditPage extends React.Component {
+   handleClick = id => {
+      alert('CLICKED Edit!');
+   };
    render() {
       return (
          <div className="recipeGrid">
@@ -11,7 +14,7 @@ export class EditPage extends React.Component {
                <span className="txt">Add Recipe</span>
                <FontAwesomeIcon className="plusIcon" icon={['fas', 'plus']} />
             </div>
-            <RecipeStorage />
+            <RecipeStorage onClick={this.handleClick} />
          </div>
       );
    }
