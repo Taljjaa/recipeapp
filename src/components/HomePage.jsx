@@ -1,15 +1,20 @@
 import React from 'react';
-import { RecipeStorage } from './RecipeStorage';
+import { RecipeDisplay } from './RecipeDisplay.jsx';
 import './styles.css';
 
 export class HomePage extends React.Component {
    handleClick = id => {
-      alert('Clicked Home!');
+      console.log('test');
    };
    render() {
       return (
          <div className="recipeGrid">
-            <RecipeStorage onClick={this.handleClick} />
+            <RecipeDisplay
+               image={this.props.image}
+               link={this.props.link}
+               title={this.props.title}
+               onClick={this.handleClick}
+            />
          </div>
       );
    }
