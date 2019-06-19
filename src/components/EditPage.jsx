@@ -5,9 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { RecipeModal } from './RecipeModal';
 
 export class EditPage extends React.Component {
-   handleClick = id => {
-      alert('CLICKED Edit!');
-   };
    render() {
       return (
          <div>
@@ -20,7 +17,7 @@ export class EditPage extends React.Component {
                      icon={['fas', 'plus']}
                   />
                </div>
-               <RecipeContainer onClick={this.handleClick} />
+               <RecipeContainer />
             </div>
          </div>
       );
