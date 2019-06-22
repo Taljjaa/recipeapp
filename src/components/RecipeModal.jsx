@@ -16,7 +16,7 @@ export class RecipeModal extends React.Component {
    };
 
    onCloseModal = () => {
-      this.setState({ open: false });
+      this.setState({ open: false, title: '', image: '', link: '' });
    };
 
    handleChange = event => {
@@ -34,11 +34,7 @@ export class RecipeModal extends React.Component {
          link: this.state.link,
       };
       recipesRef.push(recipe);
-      this.setState({
-         title: '',
-         image: '',
-         link: '',
-      });
+      this.onCloseModal();
    };
 
    render() {

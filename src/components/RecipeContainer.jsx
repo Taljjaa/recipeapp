@@ -27,7 +27,6 @@ export class RecipeContainer extends React.Component {
                image={recipe.image}
                link={recipe.link}
                title={recipe.title}
-               onClick={this.props.onClick}
             />
          );
       });
