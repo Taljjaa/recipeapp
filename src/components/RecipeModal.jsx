@@ -68,9 +68,9 @@ export class RecipeModal extends React.Component {
                   </p>
                   <p>
                      <label htmlFor="link">
-                        Link
+                        URL
                         <input
-                           value={this.state.link}
+                           value={this.state.url}
                            name="link"
                            type="text"
                            onChange={this.handleChange}
