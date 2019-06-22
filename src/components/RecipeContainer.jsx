@@ -25,9 +25,8 @@ export class RecipeContainer extends React.Component {
          return (
             <HomePage
                image={recipe.image}
-               link={recipe.link}
+               url={recipe.link}
                title={recipe.title}
-               onClick={this.props.onClick}
             />
          );
       });
