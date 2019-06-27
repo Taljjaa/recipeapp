@@ -4,7 +4,7 @@ import './components/styles.css';
 import { EditButton } from './components/EditButton';
 import { EditPage } from './components/EditPage';
 import { Link } from 'react-router-dom';
-import { RecipeContainer } from './components/RecipeContainer';
+import { RecipesList } from './components/RecipesList';
 
 class App extends Component {
    render() {
@@ -18,7 +18,7 @@ class App extends Component {
                   <EditButton />
                </div>
                <Route path="/edit" component={EditPage} />
-               <Route exact path="/" component={RecipeContainer} />
+               <Route exact path="/" component={RecipesList} />
             </>
          </Router>
       );
