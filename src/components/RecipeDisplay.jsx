@@ -1,6 +1,5 @@
 import React from 'react';
 import './styles.css';
-import { RecipeModal } from './RecipeModal';
 
 export class RecipeDisplay extends React.Component {
    // removeItem(recipeId) {
@@ -9,15 +8,11 @@ export class RecipeDisplay extends React.Component {
    // }
 
    render() {
+      const { url, image, title } = this.props;
       return (
-         <div key={this.props.url} onClick={this.props.url}>
-            <RecipeModal />
-            <img
-               className="recipeImg"
-               src={this.props.image}
-               alt={this.props.title}
-            />
-            <div>{this.props.title}</div>
+         <div key={url}>
+            <img className="recipeImg" src={image} alt={title} />
+            <div>{title}</div>
          </div>
       );
    }

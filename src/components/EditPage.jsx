@@ -2,7 +2,6 @@ import React from 'react';
 import './styles.css';
 import { RecipesList } from './RecipesList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { RecipeModal } from './RecipeModal';
 
 export class EditPage extends React.Component {
    render() {

@@ -3,6 +3,7 @@
 import React from 'react';
 import firebase from '../firebase.js';
 import { HomePage } from './HomePage';
+import { RecipeDisplay } from './RecipeDisplay.jsx';
 
 export class RecipesList extends React.Component {
    state = {
@@ -24,7 +25,7 @@ export class RecipesList extends React.Component {
          console.log(recipe);
          return (
             <div>
-               <HomePage
+               <RecipeDisplay
                   image={recipe.image}
                   url={recipe.link}
                   title={recipe.title}
