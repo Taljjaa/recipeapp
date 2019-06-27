@@ -23,11 +23,13 @@ export class RecipeContainer extends React.Component {
       const recipes = Object.values(this.state.recipes).map(recipe => {
          console.log(recipe);
          return (
-            <HomePage
-               image={recipe.image}
-               url={recipe.link}
-               title={recipe.title}
-            />
+            <div>
+               <HomePage
+                  image={recipe.image}
+                  url={recipe.link}
+                  title={recipe.title}
+               />
+            </div>
          );
       });
       return recipes;

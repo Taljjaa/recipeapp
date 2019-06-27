@@ -8,7 +8,6 @@ export class EditPage extends React.Component {
    render() {
       return (
          <div>
-            <RecipeModal />
             <div className="recipeGrid">
                <div className="newRecipe recipeImg">
                   <span className="txt">Add Recipe</span>

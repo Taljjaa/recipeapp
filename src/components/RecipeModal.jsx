@@ -40,8 +40,7 @@ export class RecipeModal extends React.Component {
    render() {
       const { open } = this.state;
       return (
-         <div>
-            <button onClick={this.onOpenModal}>Open modal</button>
+         <div onClick={this.onOpenModal}>
             <Modal open={open} onClose={this.onCloseModal} center>
                <form onSubmit={this.handleSubmit} action="">
                   <p>

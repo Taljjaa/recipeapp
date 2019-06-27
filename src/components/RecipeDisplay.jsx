@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import { RecipeModal } from './RecipeModal';
 
 export class RecipeDisplay extends React.Component {
    // removeItem(recipeId) {
@@ -10,6 +11,7 @@ export class RecipeDisplay extends React.Component {
    render() {
       return (
          <div key={this.props.url} onClick={this.props.url}>
+            <RecipeModal />
             <img
                className="recipeImg"
                src={this.props.image}
