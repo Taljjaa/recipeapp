@@ -4,7 +4,7 @@ import React from 'react';
 import firebase from '../firebase.js';
 import { HomePage } from './HomePage';
 
-export class RecipeContainer extends React.Component {
+export class RecipesList extends React.Component {
    state = {
       recipes: [],
    };
