@@ -37,10 +37,16 @@ export class RecipeModal extends React.Component {
       this.onCloseModal();
    };
 
+   handleDelete = recipeId => {
+      const recipeRef = firebase.database().ref(`/recipes/${recipeId}`);
+      recipeRef.remove();
+   };
+
    render() {
       const { open } = this.state;
       return (
-         <div onClick={this.onOpenModal}>
+         <div>
+            <div onClick={this.onOpenModal}>{this.props.children}</div>
             <Modal open={open} onClose={this.onCloseModal} center>
                <form onSubmit={this.handleSubmit} action="">
                   <p>
@@ -77,6 +83,7 @@ export class RecipeModal extends React.Component {
                      </label>
                   </p>
                   <input type="submit" value="Submit" />
+                  <button onClick={this.handleDelete}>Delete</button>
                </form>
             </Modal>
          </div>
