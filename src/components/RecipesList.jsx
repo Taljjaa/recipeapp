@@ -2,7 +2,6 @@
 
 import React from 'react';
 import firebase from '../firebase.js';
-import { HomePage } from './HomePage';
 import { RecipeDisplay } from './RecipeDisplay.jsx';
 
 export class RecipesList extends React.Component {
@@ -20,11 +19,9 @@ export class RecipesList extends React.Component {
    }
 
    render() {
-      console.log(this.state.recipes);
       const recipes = Object.values(this.state.recipes).map(recipe => {
-         console.log(recipe);
          return (
-            <div>
+            <div onClick={() => this.props.onClick(recipe)}>
                <RecipeDisplay
                   image={recipe.image}
                   url={recipe.link}
