@@ -11,21 +11,9 @@ export class EditPage extends React.Component {
       url: '',
    };
 
-   handleTitleChange = event => {
+   handleFormChange = (fieldName, value) => {
       this.setState({
-         title: event.target.value,
-      });
-   };
-
-   handleImageChange = event => {
-      this.setState({
-         image: event.target.value,
-      });
-   };
-
-   handleUrlChange = event => {
-      this.setState({
-         url: event.target.value,
+         [fieldName]: value,
       });
    };
 
@@ -37,9 +25,7 @@ export class EditPage extends React.Component {
                onSubmit={param => {
                   console.log(param);
                }}
-               onTitleChange={this.handleTitleChange}
-               onImageChange={this.handleImageChange}
-               onUrlChange={this.handleUrlChange}
+               onFormChange={this.handleFormChange}
                title={this.state.title}
                image={this.state.image}
                url={this.state.url}

@@ -2,16 +2,7 @@ import React from 'react';
 import Modal from 'react-responsive-modal';
 
 export function RecipeModal(props) {
-   const {
-      onTitleChange,
-      onImageChange,
-      onUrlChange,
-      title,
-      image,
-      url,
-      onSubmit,
-      isOpen,
-   } = props;
+   const { onFormChange, title, image, url, onSubmit, isOpen } = props;
 
    return (
       <Modal open={isOpen}>
@@ -28,7 +19,9 @@ export function RecipeModal(props) {
                      type="text"
                      name="title"
                      value={title}
-                     onChange={onTitleChange}
+                     onChange={event =>
+                        onFormChange('title', event.target.value)
+                     }
                   />
                </div>
             </label>
@@ -39,7 +32,9 @@ export function RecipeModal(props) {
                      type="text"
                      name="image"
                      value={image}
-                     onChange={onImageChange}
+                     onChange={event =>
+                        onFormChange('image', event.target.value)
+                     }
                   />
                </div>
             </label>
@@ -50,7 +45,7 @@ export function RecipeModal(props) {
                      type="text"
                      name="url"
                      value={url}
-                     onChange={onUrlChange}
+                     onChange={event => onFormChange('url', event.target.value)}
                   />
                </div>
             </label>
