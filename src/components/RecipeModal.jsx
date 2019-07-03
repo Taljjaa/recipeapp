@@ -21,7 +21,7 @@ export function RecipeModal(props) {
                onSubmit({ title, image, url });
             }}
          >
-            <label for="title">
+            <label htmlFor="title">
                Title
                <div>
                   <input
@@ -32,7 +32,7 @@ export function RecipeModal(props) {
                   />
                </div>
             </label>
-            <label for="image">
+            <label htmlFor="image">
                Image
                <div>
                   <input
@@ -43,7 +43,7 @@ export function RecipeModal(props) {
                   />
                </div>
             </label>
-            <label for="url">
+            <label htmlFor="url">
                URL
                <div>
                   <input

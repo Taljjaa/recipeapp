@@ -21,7 +21,7 @@ export class RecipesList extends React.Component {
    render() {
       const recipes = Object.values(this.state.recipes).map(recipe => {
          return (
-            <div onClick={() => this.props.onClick(recipe)}>
+            <div key={recipe.link} onClick={() => this.props.onClick(recipe)}>
                <RecipeDisplay
                   image={recipe.image}
                   url={recipe.link}

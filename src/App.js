@@ -4,7 +4,6 @@ import './components/styles.css';
 
 import { EditPage } from './components/EditPage';
 import { Link } from 'react-router-dom';
-import { RecipesList } from './components/RecipesList';
 import { HomePage } from './components/HomePage';
 
 class App extends Component {
