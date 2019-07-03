@@ -9,7 +9,7 @@ export class HomePage extends React.Component {
          <div>
             <EditButton />
             <div className="recipeGrid">
-               <RecipesList />
+               <RecipesList onClick={recipe => window.open(recipe.link)} />
             </div>
          </div>
       );
