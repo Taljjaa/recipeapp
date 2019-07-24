@@ -9,6 +9,7 @@ export class EditPage extends React.Component {
     title: '',
     image: '',
     url: '',
+    isOpen: false,
   };
 
   handleFormChange = (fieldName, value) => {
@@ -18,24 +19,26 @@ export class EditPage extends React.Component {
   };
 
   render() {
+    const { title, image, url, isOpen } = this.state;
+    const handleClick = () => this.setState({ isOpen: true });
     return (
       <>
         <RecipeModal
-          isOpen={true}
+          isOpen={isOpen}
           onSubmit={param => {
             console.log(param);
           }}
           onFormChange={this.handleFormChange}
-          title={this.state.title}
-          image={this.state.image}
-          url={this.state.url}
+          title={title}
+          image={image}
+          url={url}
         />
         <div className="recipeGrid">
-          <div className="newRecipe recipeImg">
+          <div className="newRecipe recipeImg" onClick={handleClick}>
             <span className="txt">Add Recipe</span>
             <FontAwesomeIcon className="plusIcon" icon={['fas', 'plus']} />
           </div>
-          <RecipesList onClick={recipe => console.log(recipe)} />
+          <RecipesList onClick={handleClick} />
         </div>
       </>
     );
