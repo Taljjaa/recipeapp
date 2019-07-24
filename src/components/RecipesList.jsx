@@ -4,12 +4,15 @@ import React from 'react';
 import { RecipeDisplay } from './RecipeDisplay';
 import { useRecipes } from '../magic';
 
-export function RecipesList({ onClick }) {
+export function RecipesList({ onRecipeClick }) {
   const recipes = useRecipes();
 
   return Object.values(recipes).map(recipe => {
     return (
-      <div key={recipe.url} onClick={() => onClick(recipe)}>
+      <div
+        key={recipe.url}
+        onClick={() => onRecipeClick(recipe.title, recipe.image, recipe.url)}
+      >
         <RecipeDisplay
           image={recipe.image}
           url={recipe.url}

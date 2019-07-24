@@ -20,7 +20,8 @@ export class EditPage extends React.Component {
 
   render() {
     const { title, image, url, isOpen } = this.state;
-    const handleClick = () => this.setState({ isOpen: true });
+    const handleClick = (title, image, url) =>
+      this.setState({ isOpen: true, title: title, image: image, url: url });
     return (
       <>
         <RecipeModal
@@ -34,11 +35,14 @@ export class EditPage extends React.Component {
           url={url}
         />
         <div className="recipeGrid">
-          <div className="newRecipe recipeImg" onClick={handleClick}>
+          <div
+            className="newRecipe recipeImg"
+            onClick={() => handleClick('', '', '')}
+          >
             <span className="txt">Add Recipe</span>
             <FontAwesomeIcon className="plusIcon" icon={['fas', 'plus']} />
           </div>
-          <RecipesList onClick={handleClick} />
+          <RecipesList onRecipeClick={handleClick} />
         </div>
       </>
     );
