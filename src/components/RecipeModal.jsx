@@ -2,10 +2,18 @@ import React from 'react';
 import Modal from 'react-responsive-modal';
 
 export function RecipeModal(props) {
-  const { onFormChange, title, image, url, onSubmit, isOpen } = props;
+  const {
+    onFormChange,
+    title,
+    image,
+    url,
+    onSubmit,
+    isOpen,
+    onCloseModal,
+  } = props;
 
   return (
-    <Modal open={isOpen} onClose={() => {}}>
+    <Modal open={isOpen} onClose={onCloseModal}>
       <form
         onSubmit={event => {
           event.preventDefault();

@@ -18,6 +18,10 @@ export class EditPage extends React.Component {
     });
   };
 
+  handleCloseModal = () => {
+    this.setState({ isOpen: false });
+  };
+
   render() {
     const { title, image, url, isOpen } = this.state;
     const handleClick = (title, image, url) =>
@@ -33,6 +37,7 @@ export class EditPage extends React.Component {
           title={title}
           image={image}
           url={url}
+          onCloseModal={this.handleCloseModal}
         />
         <div className="recipeGrid">
           <div
