@@ -18,7 +18,7 @@ export class EditPage extends React.Component {
     });
   };
 
-  onCloseModal = () => {
+  handleCloseModal = () => {
     this.setState({ isOpen: false });
   };
 
@@ -37,7 +37,7 @@ export class EditPage extends React.Component {
           title={title}
           image={image}
           url={url}
-          onCloseModal={this.onCloseModal}
+          onCloseModal={this.handleCloseModal}
         />
         <div className="recipeGrid">
           <div
