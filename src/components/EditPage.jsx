@@ -3,6 +3,7 @@ import './styles.css';
 import { RecipesList } from './RecipesList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { RecipeModal } from './RecipeModal';
+import { addRecipe, editRecipe } from './../magic/index.ts';
 
 export class EditPage extends React.Component {
   state = {
@@ -22,6 +23,10 @@ export class EditPage extends React.Component {
     this.setState({ isOpen: false });
   };
 
+  handleSubmit = param => {
+    addRecipe(param);
+  };
+
   render() {
     const { title, image, url, isOpen } = this.state;
     const handleClick = (title, image, url) =>
@@ -30,9 +35,7 @@ export class EditPage extends React.Component {
       <>
         <RecipeModal
           isOpen={isOpen}
-          onSubmit={param => {
-            console.log(param);
-          }}
+          onSubmit={this.handleSubmit}
           onFormChange={this.handleFormChange}
           title={title}
           image={image}
