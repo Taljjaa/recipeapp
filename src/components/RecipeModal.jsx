@@ -18,6 +18,7 @@ export function RecipeModal(props) {
         onSubmit={event => {
           event.preventDefault();
           onSubmit({ title, image, url });
+          onCloseModal();
         }}
       >
         <label htmlFor="title">
