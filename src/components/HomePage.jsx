@@ -4,12 +4,16 @@ import { EditButton } from './EditButton';
 import './styles.css';
 
 export class HomePage extends React.Component {
+  handleClick(recipeTitle, recipeImage, recipeUrl) {
+    window.open(recipeUrl);
+  }
+
   render() {
     return (
       <div>
         <EditButton />
         <div className="recipeGrid">
-          <RecipesList onClick={recipe => window.open(recipe.url)} />
+          <RecipesList onRecipeClick={this.handleClick} />
         </div>
       </div>
     );
