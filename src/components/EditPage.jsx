@@ -10,6 +10,7 @@ export class EditPage extends React.Component {
     title: '',
     image: '',
     url: '',
+    recipeKey: '',
     isOpen: false,
   };
 
@@ -24,13 +25,24 @@ export class EditPage extends React.Component {
   };
 
   handleSubmit = param => {
-    addRecipe(param);
+    const { title, image, url, recipeKey } = param;
+    if (recipeKey) {
+      editRecipe(recipeKey, { title, image, url });
+    } else {
+      addRecipe({ title, image, url });
+    }
   };
 
   render() {
-    const { title, image, url, isOpen } = this.state;
-    const handleClick = (title, image, url) =>
-      this.setState({ isOpen: true, title: title, image: image, url: url });
+    const { title, image, url, isOpen, recipeKey } = this.state;
+    const handleClick = (title, image, url, recipeKey) =>
+      this.setState({
+        isOpen: true,
+        title: title,
+        image: image,
+        url: url,
+        recipeKey: recipeKey,
+      });
     return (
       <>
         <RecipeModal
@@ -40,6 +52,7 @@ export class EditPage extends React.Component {
           title={title}
           image={image}
           url={url}
+          recipeKey={recipeKey}
           onCloseModal={this.handleCloseModal}
         />
         <div className="recipeGrid">
