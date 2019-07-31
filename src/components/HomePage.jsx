@@ -4,7 +4,7 @@ import { EditButton } from './EditButton';
 import './styles.css';
 
 export class HomePage extends React.Component {
-  handleOnClick(recipeTitle, recipeImage, recipeUrl) {
+  handleClick(recipeTitle, recipeImage, recipeUrl) {
     window.open(recipeUrl);
   }
 
@@ -13,7 +13,7 @@ export class HomePage extends React.Component {
       <div>
         <EditButton />
         <div className="recipeGrid">
-          <RecipesList onRecipeClick={this.handleOnClick} />
+          <RecipesList onRecipeClick={this.handleClick} />
         </div>
       </div>
     );
