@@ -10,6 +10,7 @@ export function RecipeModal(props) {
     onSubmit,
     isOpen,
     onCloseModal,
+    recipeKey,
   } = props;
 
   return (
@@ -17,7 +18,7 @@ export function RecipeModal(props) {
       <form
         onSubmit={event => {
           event.preventDefault();
-          onSubmit({ title, image, url });
+          onSubmit({ title, image, url, recipeKey });
           onCloseModal();
         }}
       >

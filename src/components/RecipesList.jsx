@@ -7,11 +7,14 @@ import { useRecipes } from '../magic';
 export function RecipesList({ onRecipeClick }) {
   const recipes = useRecipes();
 
-  return Object.values(recipes).map(recipe => {
+  return Object.keys(recipes).map(recipeKey => {
+    const recipe = recipes[recipeKey];
     return (
       <div
         key={recipe.url}
-        onClick={() => onRecipeClick(recipe.title, recipe.image, recipe.url)}
+        onClick={() =>
+          onRecipeClick(recipe.title, recipe.image, recipe.url, recipeKey)
+        }
       >
         <RecipeDisplay
           image={recipe.image}
