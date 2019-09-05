@@ -5,6 +5,7 @@ import './components/styles.css';
 import { EditPage } from './components/EditPage';
 import { Link } from 'react-router-dom';
 import { HomePage } from './components/HomePage';
+import { SearchBar } from './components/SearchBar';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <h1>
             <Link to="/">Recipe Box</Link>
           </h1>
+          <SearchBar />
         </div>
         <Route path="/edit" component={() => <EditPage />} />
         <Route exact path="/" component={() => <HomePage />} />

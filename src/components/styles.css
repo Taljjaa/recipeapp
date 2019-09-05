@@ -1,44 +1,49 @@
 @import url('https://fonts.googleapis.com/css?family=Staatliches');
 
 body {
-   font-family: 'Staatliches', cursive;
+  font-family: 'Staatliches', cursive;
 }
 
 .recipeGrid {
-   display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-   grid-gap: 10px;
-   justify-items: center;
-   align-items: center;
-   margin: 0px 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  margin: 0px 8px;
 }
 
 .recipeImg {
-   /* width: 350px;
+  /* width: 350px;
    height: 350px; */
-   width: 100%;
-   max-width: 500px;
-   max-height: 500px;
-   object-fit: cover;
-   border-radius: 15px;
-   cursor: pointer;
+  width: 100%;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 .newRecipe {
-   display: grid;
-   grid-template-rows: 1fr 1fr;
-   justify-items: center;
-   border: 2px dashed #4f4f4f;
-   height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  border: 2px dashed #4f4f4f;
+  height: 100%;
 }
 
 .txt {
-   align-self: end;
-   font-size: 2.5em;
-   color: #4f4f4f;
+  align-self: end;
+  font-size: 2.5em;
+  color: #4f4f4f;
 }
 
 .plusIcon {
-   color: #4f4f4f;
-   font-size: 3em;
+  color: #4f4f4f;
+  font-size: 3em;
+}
+
+.deleteButton {
+  background: red;
+  color: white;
 }

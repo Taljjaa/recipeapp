@@ -33,6 +33,10 @@ export class EditPage extends React.Component {
     }
   };
 
+  // handleDelete = recipeKey => {
+  //   deleteRecipe(recipeKey);
+  // };
+
   render() {
     const { title, image, url, isOpen, recipeKey } = this.state;
     const handleClick = (title, image, url, recipeKey) =>
@@ -48,6 +52,7 @@ export class EditPage extends React.Component {
         <RecipeModal
           isOpen={isOpen}
           onSubmit={this.handleSubmit}
+          onDelete={this.handleDelete}
           onFormChange={this.handleFormChange}
           title={title}
           image={image}
