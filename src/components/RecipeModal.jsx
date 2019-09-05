@@ -1,5 +1,6 @@
 import React from 'react';
 import Modal from 'react-responsive-modal';
+import './styles.css';
 
 export function RecipeModal(props) {
   const {
@@ -11,6 +12,7 @@ export function RecipeModal(props) {
     isOpen,
     onCloseModal,
     recipeKey,
+    onDelete,
   } = props;
 
   return (
@@ -56,6 +58,9 @@ export function RecipeModal(props) {
           </div>
         </label>
         <input type="submit" />
+        <button onClick={() => onDelete(recipeKey)} className="deleteButton">
+          Delete
+        </button>
       </form>
     </Modal>
   );
