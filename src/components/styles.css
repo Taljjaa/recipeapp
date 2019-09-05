@@ -47,3 +47,8 @@ body {
   background: red;
   color: white;
 }
+
+.searchBar {
+  float: right;
+  width: 150px;
+}
